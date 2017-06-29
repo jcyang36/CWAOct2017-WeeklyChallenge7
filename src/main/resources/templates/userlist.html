@@ -68,7 +68,20 @@
    <div class = "table-responsive">
     <table class="table">
         <tr>
-        <th class="text-center" height="80">User List </th>
+        <th class="text-center" height="80">First</th>
+            <th class="text-center" height="80">Middle</th>
+            <th class="text-center" height="80">Last</th>
+            <th class="text-center" height="80">Degree</th>
+            <th class="text-center" height="80">Field</th>
+            <th class="text-center" height="80">School</th>
+            <th class="text-center" height="80">Year</th>
+            <th class="text-center" height="80">Skill</th>
+            <th class="text-center" height="80">Company</th>
+            <th class="text-center" height="80">Email</th>
+            <th class="text-center" height="80">Title</th>
+            <th class="text-center" height="80">Duration</th>
+            <th class="text-center" height="80">Duty</th>
+            <th class="text-center" height="80">Proficiency</th>
         </tr>
 
 
@@ -84,8 +97,27 @@
 
                 <td  class="text-center"><p th:utext = "${record.last} " height="80">Transaction  </p>
                 </td>
-
+                <td class="text-center"><p th:utext = "${record.degree } " height="80">Transaction  </p>
+                </td>
+                <td class="text-center"><p th:utext = "${record.field } " height="80">Transaction  </p>
+                </td>
                 <td class="text-center"><p th:utext = "${record.school} " height="80">Transaction  </p>
+                </td>
+                <td class="text-center"><p th:utext = "${record.yearGrad } " height="80">Transaction  </p>
+                </td>
+                <td class="text-center"><p th:utext = "${record.skill } " height="80">Transaction  </p>
+                </td>
+                <td class="text-center"><p th:utext = "${record.company } " height="80">Transaction  </p>
+                </td>
+                <td class="text-center"><p th:utext = "${record.email } " height="80">Transaction  </p>
+                </td>
+                <td class="text-center"><p th:utext = "${record.workTitle } " height="80">Transaction  </p>
+                </td>
+                <td class="text-center"><p th:utext = "${record.workDur } " height="80">Transaction  </p>
+                </td>
+                <td class="text-center"><p th:utext = "${record.duty} " height="80">Transaction  </p>
+                </td>
+                <td class="text-center"><p th:utext = "${record.proficiency} " height="80">Transaction  </p>
                 </td>
 
             </tr>

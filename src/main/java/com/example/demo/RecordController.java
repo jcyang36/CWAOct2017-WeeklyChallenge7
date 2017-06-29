@@ -21,21 +21,12 @@ public class RecordController {
 
         @RequestMapping("/")
         public String home( Model model) {
-          /*  Iterable<Record> recordList = recordRepository.findAll();
-            model.addAttribute("recordList", recordList);*/
+
             model.addAttribute(new Record());
             return "index";
         }
 
 
-
-        /*@PostMapping("/addsubmit")
-        public String addSubmit(@ModelAttribute Record record, Model model) {
-            Iterable<Record> recordList = this.recordRepository.findAll();
-            model.addAttribute("recordList", recordList);
-            this.recordRepository.save(record);
-            return "redirect:/";
-        } */
         @RequestMapping(value = "/userlist")
         public String goUserList(@ModelAttribute Record record, Model model) {
 
