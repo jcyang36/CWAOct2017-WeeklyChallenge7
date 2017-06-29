@@ -35,7 +35,6 @@
 <div class="masthead">
     <ul class="nav nav-justified">
         <li ><a href="/"><h3>CONNECT UP</h3></a></li>
-        <li ><a href="/find"><h3>Find a connection</h3></a></li>
         <li class="active"><a href="/userlist"><h3>User list</h3></a></li>
         <li><a href="/logout"><h3>Log out</h3></a></li>
     </ul>
@@ -51,7 +50,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="/">SPRING BANK</a>
-            <a class="navbar-brand" href="/add">Transaction</a>
+            <a class="navbar-brand" href="/aRecordtion</a>
             <a class="navbar-brand" href="/balance">My balance</a>
             <a class="navbar-brand" href="/logout">Log out</a>
         </div>
@@ -74,29 +73,32 @@
 
 
 
-        <div th:each = "transaction: ${transactionList}">
+
+        <th:block th:each = "record: ${recordList}">
             <tr>
-                <td  class="text-center">
-
-                    <div th:with = "result=${transaction.first}">
-                        <span th:text = "${result}">Result</span>
-                    </div>
-
+                <td class="text-center">  <p th:utext = "${record.first} " height="80">Transaction  </p>
 
                 </td>
+                <td class="text-center"><p th:utext = "${record.middle } " height="80">Transaction  </p>
+                </td>
 
+                <td  class="text-center"><p th:utext = "${record.last} " height="80">Transaction  </p>
+                </td>
+
+                <td class="text-center"><p th:utext = "${record.school} " height="80">Transaction  </p>
+                </td>
 
             </tr>
+        </th:block>
 
-         </div>
 
 
         <!--<tr> <td> <p th:text="${result}"></p> </td> </tr>-->
 
-        <!--  <div th:each = "transaction: ${transactionList}">
+        <!--  <div th:eachrecordtion: ${transactionList}">
               <tr>
                   <td>
-              <p th:with = "result=result+${transaction.amount}"> Result</p>
+              <p th:with = "result=resulrecordtion.amount}"> Result</p>
               <span th:text = "${result}"> Result</span>
                   </td>
               </tr>

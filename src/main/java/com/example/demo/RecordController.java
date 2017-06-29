@@ -23,15 +23,11 @@ public class RecordController {
         public String home( Model model) {
           /*  Iterable<Record> recordList = recordRepository.findAll();
             model.addAttribute("recordList", recordList);*/
-
+            model.addAttribute(new Record());
             return "index";
         }
 
-        @RequestMapping("/find")
-        public String goAdd( Model model) {
-            model.addAttribute(new Record());
-            return "find";
-        }
+
 
         /*@PostMapping("/addsubmit")
         public String addSubmit(@ModelAttribute Record record, Model model) {
@@ -40,8 +36,8 @@ public class RecordController {
             this.recordRepository.save(record);
             return "redirect:/";
         } */
-/*        @RequestMapping(value = "/userlist", method = RequestMethod.POST)
-        public String goBalance(@ModelAttribute Record record, Model model) {
+        @RequestMapping(value = "/userlist")
+        public String goUserList(@ModelAttribute Record record, Model model) {
 
 
             Iterable<Record> recordList = this.recordRepository.findAllByFirst("Bob");
@@ -49,14 +45,19 @@ public class RecordController {
 
 
             return "userlist";
-        }*/
+        }
 
 @PostMapping ("/dosearch")
-public String doSearch(@RequestParam (value = "first") String searchTerm, Model model) {
-    model.addAttribute(recordRepository.findAllByFirst(searchTerm));
-    Iterable<Record> recordList = this.recordRepository.findAllByFirst(searchTerm);
+public String doSearch(Model model) {
+    Iterable<Record> recordList = this.recordRepository.findAllByFirst("Bob");
     model.addAttribute("recordList", recordList);
-    return "redirect:/";
+
+
+    return "userlist";
+   /* Iterable<Record> recordList = this.recordRepository.findAllByFirst(searchTerm);
+
+    model.addAttribute("recordList", recordList);
+    return "redirect:/";*/
 
 }
 
