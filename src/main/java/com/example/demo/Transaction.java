@@ -14,11 +14,10 @@ public class Transaction {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
-    private int acctNumber;
-    private float amount;
-    private String reason;
-    private String actionType;
-    private float balance;
+    private String first;
+    private String middle;
+    private String last;
+    private String school;
 
 
 
@@ -32,45 +31,38 @@ public class Transaction {
         this.id = id;
     }
 
-    public int getAcctNumber() {
-        return acctNumber;
+
+    public String getFirst() {
+        return first;
     }
 
-    public void setAcctNumber(int acctNumber) {
-        this.acctNumber = acctNumber;
+    public void setFirst(String first) {
+        this.first = first;
     }
 
-    public float getAmount() {
-        return amount;
+    public String getMiddle() {
+        return middle;
     }
 
-    public void setAmount(float amount) {
-        this.amount = amount;
+    public void setMiddle(String middle) {
+        this.middle = middle;
     }
 
-    public String getReason() {
-        return reason;
+    public String getLast() {
+        return last;
     }
 
-    public void setReason(String reason) {
-        this.reason = reason;
+    public void setLast(String last) {
+        this.last = last;
     }
 
-    public String getActionType() {
-        return actionType;
+    public String getSchool() {
+        return school;
     }
 
-    public void setActionType(String actionType) {
-        this.actionType = actionType;
+    public void setSchool(String school) {
+        this.school = school;
     }
 
-
-    public float getBalance() {
-        return balance;
-    }
-
-    public void setBalance(float balance) {
-        this.balance = balance;
-    }
 
 }

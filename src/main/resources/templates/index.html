@@ -74,16 +74,16 @@
 
             <th:block th:each = "transaction: ${transactionList}">
             <tr>
-            <td class="text-center">  <p th:utext = "${transaction.actionType} " height="80">Transaction  </p>
+            <td class="text-center">  <p th:utext = "${transaction.first} " height="80">Transaction  </p>
 
             </td>
-                <td class="text-center"><p th:utext = "${transaction.amount } " height="80">Transaction  </p>
+                <td class="text-center"><p th:utext = "${transaction.middle } " height="80">Transaction  </p>
                 </td>
 
-                <td  class="text-center"><p th:utext = "${transaction.acctNumber} " height="80">Transaction  </p>
+                <td  class="text-center"><p th:utext = "${transaction.last} " height="80">Transaction  </p>
                 </td>
 
-                <td class="text-center"><p th:utext = "${transaction.reason} " height="80">Transaction  </p>
+                <td class="text-center"><p th:utext = "${transaction.school} " height="80">Transaction  </p>
                 </td>
 
          </tr>

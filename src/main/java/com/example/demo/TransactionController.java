@@ -14,11 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class TransactionController {
 
-private float depositSum=0;
-private float withdrawalSum=0;
 
 
-    public float balance;
 
         @Autowired
         private TransactionRepository transactionRepository;
@@ -27,23 +24,6 @@ private float withdrawalSum=0;
         public String home( Model model) {
             Iterable<Transaction> transactionList = transactionRepository.findAll();
             model.addAttribute("transactionList", transactionList);
-            depositSum=0;
-            withdrawalSum=0;
-            for (Transaction t :
-                    transactionList) {
-                balance=t.getBalance();
-                if (t.getAcctNumber() == 200) {
-                    if (
-                            t.getActionType().equalsIgnoreCase("deposit")) {
-                        depositSum += t.getAmount();
-                    } else if (
-                            t.getActionType().equalsIgnoreCase("withdrawal")) {
-                        withdrawalSum += t.getAmount();
-                    }
-                }
-                balance=depositSum - withdrawalSum;
-                t.setBalance(balance);
-            }
 
             return "index";
         }
@@ -60,29 +40,7 @@ private float withdrawalSum=0;
            /*To add a record to a table, use save(transaction)*/
             Iterable<Transaction> transactionList = transactionRepository.findAll();
             model.addAttribute("transactionList", transactionList);
-            depositSum=0;
-            withdrawalSum=0;
-            for (Transaction t :
-                    transactionList) {
-                balance=t.getBalance();
-                if (t.getAcctNumber() == 200) {
-                    if (
-                            t.getActionType().equalsIgnoreCase("deposit")) {
-                        depositSum += t.getAmount();
-                    } else if (
-                            t.getActionType().equalsIgnoreCase("withdrawal")) {
-                        withdrawalSum += t.getAmount();
-                    }
-                }
-                balance=depositSum - withdrawalSum;
-
-                t.setBalance(balance);
-            }
-           transaction.setBalance(balance);
             transactionRepository.save(transaction);
-        /*    Iterable<Transaction> transactionList = transactionRepository.findAll();
-            model.addAttribute("transactionList", transactionList);*/
-
             return "redirect:/";
         }
         @RequestMapping("/userlist")
@@ -91,23 +49,7 @@ private float withdrawalSum=0;
 
             Iterable<Transaction> transactionList = transactionRepository.findAll();
             model.addAttribute("transactionList", transactionList);
-            depositSum=0;
-            withdrawalSum=0;
-            for (Transaction t :
-                    transactionList) {
-                balance=t.getBalance();
-                if (t.getAcctNumber() == 200) {
-                    if (
-                            t.getActionType().equalsIgnoreCase("deposit")) {
-                        depositSum += t.getAmount();
-                    } else if (
-                            t.getActionType().equalsIgnoreCase("withdrawal")) {
-                        withdrawalSum += t.getAmount();
-                    }
-                }
-                 balance=depositSum - withdrawalSum;
-                t.setBalance(balance);
-            }
+
 
             return "userlist";
         }
@@ -126,13 +68,7 @@ private float withdrawalSum=0;
 
 
 
-    public float getBalance() {
-        return balance;
-    }
 
-    public void setBalance(float balance) {
-        this.balance = balance;
-    }
 
 
 }
