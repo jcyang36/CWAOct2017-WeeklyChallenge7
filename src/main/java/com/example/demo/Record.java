@@ -14,11 +14,12 @@ public class Record {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
-    private String FirstName;
-    private String Middle;
-    private float LastName;
-
-
+    private String first;
+    private String middle;
+    private String last;
+    private String school;
+    private String company;
+    private String skills;
 
 
 

@@ -48,7 +48,7 @@ private float withdrawalSum=0;
             return "index";
         }
 
-        @RequestMapping("/add")
+        @RequestMapping("/find")
         public String goAdd( Model model) {
             model.addAttribute(new Transaction());
             return "find";
@@ -109,7 +109,7 @@ private float withdrawalSum=0;
                 t.setBalance(balance);
             }
 
-            return "balance";
+            return "userlist";
         }
 
 
