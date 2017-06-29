@@ -38,10 +38,9 @@ public class RecordController {
             return "userlist";
         }
 
-@PostMapping ("/dosearch")
-public String doSearch(Model model) {
-    Iterable<Record> recordList = this.recordRepository.findAllByFirst("Bob");
-    model.addAttribute("recordList", recordList);
+@RequestMapping ("/dosearch")
+public String doSearch(@RequestParam("first") String first, Model model) {
+        model.addAttribute(recordRepository.findAllByFirst(first));
 
 
     return "userlist";
