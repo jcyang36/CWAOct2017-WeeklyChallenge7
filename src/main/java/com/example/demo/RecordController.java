@@ -6,6 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+
 
 /**
  * Created by student on 6/23/17.
@@ -31,12 +33,41 @@ public class RecordController {
         public String goUserList(@ModelAttribute Record record, Model model) {
 
 
-            Iterable<Record> recordList = this.recordRepository.findAllByFirst("Bob");
-            model.addAttribute("recordList", recordList);
-
-
             return "userlist";
         }
+
+
+    @RequestMapping("/user")
+    public String goUser(Model model, @RequestParam("first") String first, String middle, String last, String email, String degree, String field, String school, String YearGrad,
+                         String workTitle, String company, String workDur, String duty, String skill, String proficiency) {
+		/*    Output for names  */
+
+        model.addAttribute("FirstLine", first+" "+middle+" "+last);
+        model.addAttribute("email", email);
+
+		/* Output for names  */
+
+		/* Output for education  */
+        model.addAttribute("education", degree+" in "+field+" <br/>"+school+", "+YearGrad);
+
+
+		/*  Output for education  */
+
+		/*  Output for work   */
+        model.addAttribute("work" , workTitle +" <br/>"+company+", "+workDur+" <br/>"+duty);
+
+
+		/*  Output for work  */
+
+		/* Output for skills  */
+        model.addAttribute("skill" , skill+", "+proficiency);
+
+
+
+    /*  Output for skills  */
+        model.addAttribute(new Record());
+        return "user";
+    }
 
 @RequestMapping ("/dosearchbyfirst")
 public String doSearchByFirst(@RequestParam("first") String first, Model model) {
