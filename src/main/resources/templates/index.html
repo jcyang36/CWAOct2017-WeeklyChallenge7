@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="www.thymeleaf.org">
+<html lang="en" xmlns:th="www.thymeleaf.org"  xmlns:sec="www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="utf-8" />
     <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png"/>
@@ -53,6 +53,7 @@
     <div class="container">
 
 <h3>SEARCH BY</h3>
+
         <form th:action = "@{/dosearchbyfirst}" id = "firstform" th:object = "${record}" method = "post">
 
 
@@ -74,24 +75,11 @@
                 </div>
             </div>
 
-           <!--<div class="input-group">
-               <label class="control-label" for="exampleInputFirst1">First</label>
-                <input type="text" class="form-control" id="exampleInputFirst1" placeholder="first" th:field="*{first}"/>
-                <span class="input-group-addon">
-        <i class="fa fa-search"></i>
-    </span>
-            </div> -->
-
-            <!--<div class="input-append">
-                <input class="span2" type="text" placeholder="first" th:field="*{first}"/>
-                <button type="submit" class="btn">
-                    <i class="icon-search"></i>
-                </button>
-            </div>-->
 
 
 
         </form>
+        <div  sec:authorize = "hasAuthority('RECRUITER')">
         <form th:action = "@{/dosearchbycompany}" id = "companyform" th:object = "${record}" method = "post">
             <div class="form-group">
                 <div class="row">
@@ -106,8 +94,8 @@
                     </div>
                 </div>
             </div>
-
         </form>
+        </div>
         <form th:action = "@{/dosearchbylast}" id = "lastform" th:object = "${record}" method = "post">
             <div class="form-group">
                 <div class="row">
@@ -124,7 +112,9 @@
             </div>
 
         </form>
-        <form th:action = "@{/dosearchbyschool}" id = "schoolform" th:object = "${record}" method = "post">
+
+<div  sec:authorize = "hasAuthority('RECRUITER')">
+        <form th:action = "@{/dosearchbyschool}" id = "schoolform" th:object = "${record}" method = "post" >
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">
@@ -140,7 +130,8 @@
             </div>
 
         </form>
-
+</div>
+        <div sec:authorize = "hasAuthority('RECRUITER')">
         <form th:action = "@{/dosearchbyskill}" id = "skillform" th:object = "${record}" method = "post">
             <div class="form-group">
                 <div class="row">
@@ -157,9 +148,11 @@
             </div>
 
         </form>
-
+        </div>
     </div>
 </div>
+
+
 <!--  jQuery and Bootstrap core files    -->
 <script src="assets/js/jquery.js" type="text/javascript"></script>
 <script src="assets/js/jquery-ui.custom.min.js" type="text/javascript"></script>
