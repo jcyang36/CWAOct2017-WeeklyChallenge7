@@ -32,7 +32,7 @@ public class RecordController {
         @RequestMapping(value = "/userlist")
         public String goUserList(@ModelAttribute Record record, Model model) {
 
-
+            model.addAttribute(recordRepository.findAll());
             return "userlist";
         }
 
