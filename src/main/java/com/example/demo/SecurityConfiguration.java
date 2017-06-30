@@ -31,7 +31,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 
         http
                 .authorizeRequests().antMatchers( "/assets/**", "/bootstrap3/**").permitAll()
-                .antMatchers("/gosearch").hasRole("ADMIN")
+                .antMatchers("/dosearchbyschool, /dosearchbycompany, /dosearchbyskill").hasRole("RECRUITER")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
