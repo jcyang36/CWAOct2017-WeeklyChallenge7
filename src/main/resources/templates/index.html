@@ -26,6 +26,17 @@
             margin: 0 auto;
             width:350px;
         }
+
+        input.search-box {
+            width: 15%;
+            background: #333;
+            background-image: url('/img/glyphicons-halflings-white.png');
+            background-position: -48px 0;
+            padding-left: 30px;
+            margin-top: 45px;
+            border: 0;
+            float: right;
+        }
     </style>
 </head>
 <body>
@@ -41,53 +52,110 @@
 <div class = "section">
     <div class="container">
 
-
+<h3>SEARCH BY</h3>
         <form th:action = "@{/dosearchbyfirst}" id = "firstform" th:object = "${record}" method = "post">
 
 
-            <div class="form-group">
+           <div class="form-group">
                 <div class="row">
-                    <div class="col-md-6">
+
+                    <div class="col-md-4">
                         <label for="exampleInputFirst1">First Name</label>
-                        <input type="text" class="form-control" id="exampleInputFirst1" placeholder="first" th:field="*{first}"/>
                     </div>
+                    <div class="col-md-5">
+                        <input type="text" class="form-control" id="exampleInputFirst1" placeholder="first" th:field="*{first}"/>
+
+                    </div>
+                    <div class ="col-md-3">
+                        <input type="submit" value = "Submit"/>
+
+                    </div>
+
                 </div>
             </div>
-            <input type="submit" value = "Submit"/>
+
+           <!--<div class="input-group">
+               <label class="control-label" for="exampleInputFirst1">First</label>
+                <input type="text" class="form-control" id="exampleInputFirst1" placeholder="first" th:field="*{first}"/>
+                <span class="input-group-addon">
+        <i class="fa fa-search"></i>
+    </span>
+            </div> -->
+
+            <!--<div class="input-append">
+                <input class="span2" type="text" placeholder="first" th:field="*{first}"/>
+                <button type="submit" class="btn">
+                    <i class="icon-search"></i>
+                </button>
+            </div>-->
+
+
+
         </form>
         <form th:action = "@{/dosearchbycompany}" id = "companyform" th:object = "${record}" method = "post">
             <div class="form-group">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <label for="exampleInputCompany1">Company</label>
+                    </div>
+                    <div class="col-md-5">
                         <input type="text" class="form-control" id="exampleInputCompany1" placeholder="company" th:field="*{company}"/>
                     </div>
-                </div>
-            </div>
-            <input type="submit" value = "Submit"/>
-        </form>
-        <form th:action = "@{/dosearch}" id = "atmform" th:object = "${record}" method = "post">
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-md-6">
-                        <label for="exampleInputLast1">Last Name</label>
-                        <input type="text" class="form-control" id="exampleInputLast1" placeholder="last" th:field="*{last}"/>
-                    </div>
-                </div>
-            </div>
-            <input type="submit" value = "Submit"/>
-        </form>
-        <form th:action = "@{/dosearchbyschool}" id = "schoolform" th:object = "${record}" method = "post">
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-md-6">
-                        <label for="exampleInputActionSchool1">School</label>
-                        <input type="text" class="form-control" id="exampleInputActionSchool1" placeholder="school" th:field="*{school}"/>
+                    <div class="col-md-3">
+                        <input type="submit" value = "Submit"/>
                     </div>
                 </div>
             </div>
 
-            <input type="submit" value = "Submit"/>
+        </form>
+        <form th:action = "@{/dosearch}" id = "atmform" th:object = "${record}" method = "post">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="exampleInputLast1">Last Name</label>
+                    </div>
+                    <div class="col-md-5">
+                        <input type="text" class="form-control" id="exampleInputLast1" placeholder="last" th:field="*{last}"/>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="submit" value = "Submit"/>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+        <form th:action = "@{/dosearchbyschool}" id = "schoolform" th:object = "${record}" method = "post">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="exampleInputActionSchool1">School</label>
+                    </div>
+                    <div class="col-md-5">
+                        <input type="text" class="form-control" id="exampleInputActionSchool1" placeholder="school" th:field="*{school}"/>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="submit" value = "Submit"/>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+        <form th:action = "@{/dosearchbyskill}" id = "skillform" th:object = "${record}" method = "post">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="exampleInputActionSkill1">Skill</label>
+                    </div>
+                    <div class="col-md-5">
+                        <input type="text" class="form-control" id="exampleInputActionSkill1" placeholder="skill" th:field="*{skill}"/>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="submit" value = "Submit"/>
+                    </div>
+                </div>
+            </div>
+
         </form>
 
     </div>
