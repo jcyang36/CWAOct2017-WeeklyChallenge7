@@ -38,18 +38,25 @@ public class RecordController {
             return "userlist";
         }
 
-@RequestMapping ("/dosearch")
+@RequestMapping ("/dosearchbyfirst")
 public String doSearch(@RequestParam("first") String first, Model model) {
         model.addAttribute(recordRepository.findAllByFirst(first));
 
-
     return "userlist";
-   /* Iterable<Record> recordList = this.recordRepository.findAllByFirst(searchTerm);
-
-    model.addAttribute("recordList", recordList);
-    return "redirect:/";*/
-
 }
+
+
+    @RequestMapping ("/dosearchbyschool")
+    public String doSearchBySchool(@RequestParam("school") String school, Model model) {
+        model.addAttribute(recordRepository.findAllBySchool(school));
+        return "userlist";
+    }
+
+    @RequestMapping ("/dosearchbycompany")
+    public String doSearchByCompany(@RequestParam("company") String company, Model model) {
+        model.addAttribute(recordRepository.findAllByCompany(company));
+        return "userlist";
+    }
 
     @RequestMapping("/login")
     public String login() {

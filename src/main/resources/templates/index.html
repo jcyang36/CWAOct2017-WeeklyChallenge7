@@ -42,16 +42,9 @@
     <div class="container">
 
 
-        <form th:action = "@{/dosearch}" id = "atmform" th:object = "${record}" method = "post">
+        <form th:action = "@{/dosearchbyfirst}" id = "firstform" th:object = "${record}" method = "post">
 
 
-            <!--   <div class = "form-group">
-                   <label for="exampleInputActionType1">Make</label>
-                   <select name="actionlist" form="atmform" th:field="*{actionType}">
-                       <option th:value = "deposit" th:text="${'a deposit'}">a deposit</option>
-                       <option th:value = "withdrawal" th:text ="${'a withdrawal'}">a withdrawal</option>
-                   </select>
-               </div>-->
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-6">
@@ -60,15 +53,20 @@
                     </div>
                 </div>
             </div>
+            <input type="submit" value = "Submit"/>
+        </form>
+        <form th:action = "@{/dosearchbycompany}" id = "companyform" th:object = "${record}" method = "post">
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-6">
-                        <label for="exampleInputMiddle1">Middle</label>
-                        <input type="text" class="form-control" id="exampleInputMiddle1" placeholder="middle" th:field="*{middle}"/>
+                        <label for="exampleInputCompany1">Company</label>
+                        <input type="text" class="form-control" id="exampleInputCompany1" placeholder="company" th:field="*{company}"/>
                     </div>
                 </div>
             </div>
-
+            <input type="submit" value = "Submit"/>
+        </form>
+        <form th:action = "@{/dosearch}" id = "atmform" th:object = "${record}" method = "post">
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-6">
@@ -77,6 +75,9 @@
                     </div>
                 </div>
             </div>
+            <input type="submit" value = "Submit"/>
+        </form>
+        <form th:action = "@{/dosearchbyschool}" id = "schoolform" th:object = "${record}" method = "post">
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-6">
