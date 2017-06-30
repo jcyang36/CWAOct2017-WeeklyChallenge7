@@ -53,7 +53,7 @@
     <div class="container">
 
 <h3>SEARCH BY</h3>
-        <form th:action = "@{/user}" id = "firstform" th:object = "${record}" method = "post">
+        <form th:action = "@{/dosearchbyfirst}" id = "firstform" th:object = "${record}" method = "post">
 
 
            <div class="form-group">
@@ -108,7 +108,7 @@
             </div>
 
         </form>
-        <form th:action = "@{/dosearch}" id = "atmform" th:object = "${record}" method = "post">
+        <form th:action = "@{/dosearch}" id = "lastform" th:object = "${record}" method = "post">
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">

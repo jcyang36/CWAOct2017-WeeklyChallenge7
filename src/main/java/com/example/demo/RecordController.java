@@ -73,7 +73,7 @@ public class RecordController {
 public String doSearchByFirst(@RequestParam("first") String first, Model model) {
         model.addAttribute(recordRepository.findAllByFirst(first));
 
-    return "userlist";
+    return "user";
 }
     @RequestMapping ("/dosearchbylast")
     public String doSearchByLast(@RequestParam("last") String last, Model model) {
