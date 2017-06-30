@@ -39,11 +39,17 @@ public class RecordController {
         }
 
 @RequestMapping ("/dosearchbyfirst")
-public String doSearch(@RequestParam("first") String first, Model model) {
+public String doSearchByFirst(@RequestParam("first") String first, Model model) {
         model.addAttribute(recordRepository.findAllByFirst(first));
 
     return "userlist";
 }
+    @RequestMapping ("/dosearchbylast")
+    public String doSearchByLast(@RequestParam("last") String last, Model model) {
+        model.addAttribute(recordRepository.findAllByLast(last));
+
+        return "userlist";
+    }
 
 
     @RequestMapping ("/dosearchbyschool")
@@ -55,6 +61,13 @@ public String doSearch(@RequestParam("first") String first, Model model) {
     @RequestMapping ("/dosearchbycompany")
     public String doSearchByCompany(@RequestParam("company") String company, Model model) {
         model.addAttribute(recordRepository.findAllByCompany(company));
+        return "userlist";
+    }
+
+
+    @RequestMapping ("/dosearchbyskill")
+    public String doSearchBySkill(@RequestParam("skill") String skill, Model model) {
+        model.addAttribute(recordRepository.findAllBySkill(skill));
         return "userlist";
     }
 

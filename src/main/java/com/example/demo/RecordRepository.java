@@ -11,8 +11,10 @@ public interface RecordRepository extends CrudRepository<Record, Integer>{
     public List<Record> findById(int id);
 
     public List<Record> findAllByFirst(String First);
+    public List<Record> findAllByLast(String Last);
 
     public List<Record> findAllBySchool(String School);
 
     public List<Record> findAllByCompany(String Company);
+    public List<Record> findAllBySkill(String Skill);
 }
