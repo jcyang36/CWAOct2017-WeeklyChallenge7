@@ -52,8 +52,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 
         auth.userDetailsService(userDetailsServiceBean());
     auth.inMemoryAuthentication().withUser("user").password("password").roles("USER").and().
-                withUser("root").password("password2").roles("ADMIN").and().
-                withUser("Dave").password("begreat").roles("ADMIN").and().
-        withUser("Fi").password("becold").roles("ADMIN");
+                withUser("root").password("password2").roles("RECRUITER").and().
+                withUser("Dave").password("begreat").roles("RECRUITER").and().
+        withUser("Fi").password("becold").roles("RECRUITER");
     }
 }
