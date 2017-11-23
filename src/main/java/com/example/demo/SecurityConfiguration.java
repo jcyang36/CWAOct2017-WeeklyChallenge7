@@ -30,7 +30,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
     protected void configure(HttpSecurity http) throws Exception {
 
         http
-                .authorizeRequests().antMatchers( "/assets/**", "/bootstrap3/**").permitAll()
+                .authorizeRequests().antMatchers( "/assets/**", "/bootstrap3/**","/css/**").permitAll()
                 .antMatchers("/dosearchbyschool, /dosearchbycompany, /dosearchbyskill").hasRole("RECRUITER")
                 .anyRequest().authenticated()
                 .and()
