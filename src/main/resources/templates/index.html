@@ -42,7 +42,7 @@
 
 
         </form>
-        <div  sec:authorize = "hasAuthority('RECRUITER')">
+        <div  sec:authorize = "hasAuthority('ROLE_RECRUITER')">
         <form th:action = "@{/dosearchbycompany}" id = "companyform" th:object = "${record}" method = "post">
             <div class="form-group">
                 <div class="row">
