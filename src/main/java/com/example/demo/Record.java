@@ -29,8 +29,13 @@ public class Record {
     private String duty;
     private String proficiency;
 
-    public Record(String first, String last, String school, String skill, String company, String email, String degree, String field, String yearGrad, String workTitle, String workDur, String duty, String proficiency) {
+
+    public Record() {
+    }
+
+    public Record(String first, String middle, String last, String school, String skill, String company, String email, String degree, String field, String yearGrad, String workTitle, String workDur, String duty, String proficiency) {
         this.first = first;
+        this.middle = middle;
         this.last = last;
         this.school = school;
         this.skill = skill;
@@ -43,9 +48,6 @@ public class Record {
         this.workDur = workDur;
         this.duty = duty;
         this.proficiency = proficiency;
-    }
-
-    public Record() {
     }
 
 

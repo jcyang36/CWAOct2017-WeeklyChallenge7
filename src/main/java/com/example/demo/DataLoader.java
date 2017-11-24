@@ -13,10 +13,10 @@ public class DataLoader implements CommandLineRunner {
     public void run(String... strings) throws Exception{
         System.out.println("Loading data. . .");
 
-        Record record = new Record("John","Smith","JHU", "Java","Amtrak","j@gmail.com","BS","Psychology","2010","Programmer","2012-2014","Developing software","Expert" );
+        Record record = new Record("John","J","Smith","JHU", "Java","Amtrak","j@gmail.com","BS","Psychology","2010","Programmer","2012-2014","Developing software","Expert" );
         recordRepository.save(record);
 
-        record = new Record("Sally","Smith","UMBC", "Python","Amtrak","s@gmail.com","BS","Psychology","2010","Assistant","2010-2014","Developing software","Expert" );
+        record = new Record("Sally","S","Smith","UMBC", "Python","Amtrak","s@gmail.com","BS","Psychology","2010","Assistant","2010-2014","Developing software","Expert" );
         recordRepository.save(record);
     }
 
