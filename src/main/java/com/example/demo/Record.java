@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 
 /**
@@ -14,19 +16,47 @@ public class Record {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
+    @NotNull
+    @Size(min=2)
     private String first;
+    @NotNull
+    @Size(min=2)
     private String middle;
+    @NotNull
+    @Size(min=2)
     private String last;
+    @NotNull
+    @Size(min=2)
     private String school;
+    @NotNull
+    @Size(min=2)
     private String skill;
+    @NotNull
+    @Size(min=2)
     private String company;
+    @NotNull
+    @Size(min=2)
     private String email;
+    @NotNull
+    @Size(min=2)
     private String degree;
+    @NotNull
+    @Size(min=2)
     private String field;
+    @NotNull
+    @Size(min=2)
     private String yearGrad;
+    @NotNull
+    @Size(min=2)
     private String workTitle;
+    @NotNull
+    @Size(min=2)
     private String workDur;
+    @NotNull
+    @Size(min=2)
     private String duty;
+    @NotNull
+    @Size(min=2)
     private String proficiency;
 
 

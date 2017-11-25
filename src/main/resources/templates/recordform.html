@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head th:replace="main::headstuff">
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<div th:replace="main::navbar"></div>
+
+<div class="container">
+<form action="#" th:action="@{/process}" th:object="{record}" method="post"></form>
+<input type="hidden" th:field="*{id}" />
+
+<p class="col-md-2"></p> <label class="col-md-4">First Name</label>
+<strong>
+    <span class="alert alert-danger" th:if="${#fields.hasErrors('first')}" th:errors="*{first}">First Name Error</span>
+</strong>
+<input type="text" id="first" placeholder="First Name" th:field="*{first}"/><br/><br/>
+
+<p class="col-md-2"></p> <label class="col-md-4">Middle Name</label>
+<strong>
+    <span class="alert alert-danger" th:if="${#fields.hasErrors('middle')}" th:errors="*{middle}">Middle Name Error</span>
+</strong>
+<input type="text" id="middle" placeholder="Middle Name" th:field="*{middle}"/><br/><br/>
+<p class="col-md-2"></p> <label class="col-md-4">Last Name</label>
+<strong>
+    <span class="alert alert-danger" th:if="${#fields.hasErrors('last')}" th:errors="*{last}">Last Name Error</span>
+</strong>
+<input type="text" id="last" placeholder="Last Name" th:field="*{last}"/><br/><br/>
+
+    <p class="col-md-2"></p> <label class="col-md-4">Email</label>
+    <strong>
+        <span class="alert alert-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</span>
+    </strong>
+    <input type="text" id="email" placeholder="Email" th:field="*{email}"/><br/><br/>
+
+
+    <p class="col-md-2"></p> <label class="col-md-4">School</label>
+<strong>
+    <span class="alert alert-danger" th:if="${#fields.hasErrors('school')}" th:errors="*{school}">School Error</span>
+</strong>
+<input type="text" id="school" placeholder="School" th:field="*{school}"/><br/><br/>
+
+
+<p class="col-md-2"></p> <label class="col-md-4">Company</label>
+<strong>
+    <span class="alert alert-danger" th:if="${#fields.hasErrors('company')}" th:errors="*{company}">Company Error</span>
+</strong>
+<input type="text" id="company" placeholder="Company" th:field="*{company}"/><br/><br/>
+
+
+<p class="col-md-2"></p> <label class="col-md-4">Degree</label>
+<strong>
+    <span class="alert alert-danger" th:if="${#fields.hasErrors('degree')}" th:errors="*{degree}">Degree Error</span>
+</strong>
+<input type="text" id="degree" placeholder="Degree" th:field="*{degree}"/><br/><br/>
+
+
+<p class="col-md-2"></p> <label class="col-md-4">Field</label>
+<strong>
+    <span class="alert alert-danger" th:if="${#fields.hasErrors('field')}" th:errors="*{field}">Field Error</span>
+</strong>
+<input type="text" id="field" placeholder="Field" th:field="*{field}"/><br/><br/>
+
+<p class="col-md-2"></p> <label class="col-md-4">Year</label>
+<strong>
+    <span class="alert alert-danger" th:if="${#fields.hasErrors('yearGrad')}" th:errors="*{yearGrad}">Year of Graduation Error</span>
+</strong>
+<input type="text" id="yearGrad" placeholder="Year of Graduation" th:field="*{yearGrad}"/><br/><br/>
+
+    <p class="col-md-2"></p> <label class="col-md-4">Work Title</label>
+    <strong>
+        <span class="alert alert-danger" th:if="${#fields.hasErrors('workTitle')}" th:errors="*{workTitle}">Work Title Error</span>
+    </strong>
+    <input type="text" id="workTitle" placeholder="Work Title" th:field="*{workTitle}"/><br/><br/>
+
+
+    <p class="col-md-2"></p> <label class="col-md-4">Work Duration</label>
+    <strong>
+        <span class="alert alert-danger" th:if="${#fields.hasErrors('workDur')}" th:errors="*{workDur}">Work Duration Error</span>
+    </strong>
+    <input type="text" id="workDur" placeholder="Work Duration" th:field="*{workDur}"/><br/><br/>
+
+    <p class="col-md-2"></p> <label class="col-md-4">Duty</label>
+    <strong>
+        <span class="alert alert-danger" th:if="${#fields.hasErrors('duty')}" th:errors="*{duty}">Duty Error</span>
+    </strong>
+    <input type="text" id="duty" placeholder="Duty" th:field="*{duty}"/><br/><br/>
+
+
+    <p class="col-md-2"></p> <label class="col-md-4">Skill</label>
+    <strong>
+        <span class="alert alert-danger" th:if="${#fields.hasErrors('skill')}" th:errors="*{skill}">Skill Error</span>
+    </strong>
+    <input type="text" id="skill" placeholder="Skill" th:field="*{skill}"/><br/><br/>
+
+
+
+    <p class="col-md-2"></p> <label class="col-md-4">Proficiency</label>
+    <strong>
+        <span class="alert alert-danger" th:if="${#fields.hasErrors('proficiency')}" th:errors="*{proficiency}">Proficiency Error</span>
+    </strong>
+    <input type="text" id="proficiency" placeholder="Proficiency" th:field="*{proficiency}"/><br/><br/>
+
+    <input type="submit" value="Submit"/>
+</div>
+</body>
+</html>
